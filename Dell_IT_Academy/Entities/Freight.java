@@ -1,23 +1,18 @@
 package Dell_IT_Academy.Entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Freight {
 
     public Route route;
     public Loadout loadout;
-
-    public Truck truck;
-
+    public Fleet fleet;
     public Freight() {}
 
-    public Freight(Route route, Loadout loadout) {
+    public Freight(Route route, Loadout loadout, Fleet fleet) {
         this.route = route;
         this.loadout = loadout;
-    }
-
-    @Override
-    public String toString() {
-        return "Transporte cadastrado: " +
-                "\nRota: " + route +
-                ", \nCarga: " + loadout;
+        this.fleet = fleet;
     }
 }

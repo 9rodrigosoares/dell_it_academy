@@ -1,10 +1,13 @@
 package Dell_IT_Academy.Entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Route {
 
-    private String initialCity;
-    private String finalCity;
-    private int distance;
+    public String initialCity;
+    public String finalCity;
+    public int distance;
 
     public Route() {}
 
@@ -18,23 +21,11 @@ public class Route {
         return initialCity;
     }
 
-    public void setInitialCity(String initialCity) {
-        this.initialCity = initialCity;
-    }
-
     public String getFinalCity() {
         return finalCity;
     }
 
-    public void setFinalCity(String finalCity) {
-        this.finalCity = finalCity;
-    }
-
     public int getDistance() {
         return distance;
-    }
-
-    public void setDistance(int distance) {
-        this.distance = distance;
     }
 }

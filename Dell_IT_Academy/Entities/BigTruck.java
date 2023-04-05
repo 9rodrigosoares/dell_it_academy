@@ -1,10 +1,10 @@
 package Dell_IT_Academy.Entities;
 
+import Dell_IT_Academy.Utils.Utils;
+
 public class BigTruck extends Truck {
 
-    public static final String name = "grande";
-    public static final double kmPrice = 27.44;
-    public static final double loadWeight = 10000.0;
-
-    public BigTruck() {}
+    public BigTruck() {
+        super(Utils.Constants.textBigTruck, Utils.Constants.kmBigTruckCost, Utils.Constants.maxLoadWeightBigTruck);
+    }
 }

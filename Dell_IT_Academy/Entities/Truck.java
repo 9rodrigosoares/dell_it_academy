@@ -6,12 +6,20 @@ public abstract class Truck {
     private double kmPrice;
     private double loadWeight;
 
-    public Truck() {}
-
     public Truck(String name, double kmPrice, double loadWeight) {
         this.name = name;
         this.kmPrice = kmPrice;
         this.loadWeight = loadWeight;
+    }
+
+    public static Truck getTruck(String name) {
+
+        return switch (name) {
+            case "pequeno" -> new SmallTruck();
+            case "medio" -> new MediumTruck();
+            case "grande" -> new BigTruck();
+            default -> null;
+        };
     }
 
     public String getName() {

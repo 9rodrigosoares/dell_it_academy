@@ -12,19 +12,20 @@ public class CsvReader {
 
         Map<String, Map<String, Integer>> map = new HashMap<>();
 
-        // Ler o arquivo CSV e preencher o mapa com as distâncias entre as cidades
-        try (BufferedReader br = new BufferedReader(new FileReader("src/Dell_IT_Academy/Data/DNIT-Distancias.csv"))) {
-            String[] cities = br.readLine().split(";");  //cria lista de cidades
+        /* Ler o arquivo CSV e preencher o mapa com as distâncias entre as cidades */
+        try (BufferedReader br = new BufferedReader(new FileReader("Data/DNIT-Distancias.csv"))) {
+            String[] cities = br.readLine().split(";");
             for (String city : cities) {
                 map.put(city, new HashMap<>());
             }
-            String linha;
+
+            String row;
             int i = 0;
-            while ((linha = br.readLine()) != null) {
-                String[] valores = linha.split(";");
-                for (int j = 0; j < valores.length; j++) {
-                    map.get(cities[i]).put(cities[j], Integer.parseInt(valores[j]));
-                }
+            while ((row = br.readLine()) != null) {
+                String[] distances = row.split(";");  /* Separa as distâncias*/
+                for (int j = 0; j < distances.length; j++) {
+                    map.get(cities[i]).put(cities[j], Integer.parseInt(distances[j]));
+                }  //  Map<CidadeOrigem, Map<CidadeDestino, distância>>
                 i++;
             }
         } catch (IOException e) {
